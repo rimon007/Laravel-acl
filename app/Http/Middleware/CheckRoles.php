@@ -21,7 +21,7 @@ class CheckRoles
 
         $actions = $request->route()->getAction();
         $roles = (isset($actions['roles'])) ? $actions['roles'] : null;
-        //dd($request->user());
+        //dd($request->user()->hasRole($roles));
         if($request->user()->hasRole($roles))
             return $next($request);
         

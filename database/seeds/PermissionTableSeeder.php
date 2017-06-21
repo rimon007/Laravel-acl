@@ -16,6 +16,10 @@ class PermissionTableSeeder extends Seeder
     			'name' => 'view',
     			'label' => 'View any data'
     		],
+            [
+                'name' => 'create',
+                'label' => 'Create any record to DB'
+            ],
     		[
     			'name' => 'edit',
     			'label' => 'Edit any form'

@@ -10,4 +10,8 @@ class UserRoleController extends Controller
     public function index() {
     	return view('welcome');
     }
+
+    public function show() {
+    	return 'Show';
+    }
 }

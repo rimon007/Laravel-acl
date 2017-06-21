@@ -20,12 +20,14 @@ trait HasRoles {
         if(is_string($role)) 
             return $this->roles->contains('name', $role); 
 
-        foreach($role as $r) {
-        	$attr = (isset($r->name)) ? $r->name : $r;
-		    if ($this->hasRole($attr)) {
-		        return true;
-		    }
-		}
+        if(is_array($role)) {
+	        foreach($role as $r) {
+	        	$attr = (isset($r->name)) ? $r->name : $r;
+			    if ($this->hasRole($attr)) {
+			        return true;
+			    }
+			}        	
+        }
 
 		return false;
     }
